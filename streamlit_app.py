@@ -13,5 +13,6 @@ st.header('🍌🥭 Build Your Own Fruit Smoothie 🥝🍇')
 My_fruit_list= pd.read_csv("https://uni-lab-files.s3.us-west-2.amazonaws.com/dabw/fruit_macros.txt")
 My_fruit_list= My_fruit_list.set_index("Fruit")
 
-st.multiselect("Pick some fruits:", list(My_fruit_list.index),['Avocado','Strawberries'])
-st.dataframe(My_fruit_list)
+fruits_selected=st.multiselect("Pick some fruits:", list(My_fruit_list.index),['Avocado','Strawberries'])
+fruits_to_show=My_fruit_list.loc[fruits_selected]
+st.dataframe(fruits_to_show)
