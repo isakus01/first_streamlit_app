@@ -1,3 +1,3 @@
 import streamlit as st
 
-st.Write('My Parents New Healthy Diner')
+st.text('My Parents New Healthy Diner')
